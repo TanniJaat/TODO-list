@@ -40,6 +40,7 @@ function TodoList() {
       localStorage.setItem("todoss", JSON.stringify(todos));
     }
   },[todos])
+  
 
   
 
@@ -293,8 +294,8 @@ function TodoList() {
             onClick={update}
             className=" blur-xl grayscale opacity-40 bg-black z-[1] w-[100vw] h-[100vh] absolute "
           ></div>
-          <div className="z-[2] h-[100vh] absolute right-0 p-10 w-screen max-w-screen-sm ">
-            <div className="bg-[#f8fafc] h-full relative  p-4 rounded-xl">
+          <div className="z-[2]  h-full absolute right-0 p-10 w-screen max-w-screen-sm ">
+            <div className="bg-[#f8fafc] md:overflow-hidden overflow-scroll h-full relative  p-4 rounded-xl">
               <div className="flex relative justify-between">
                 <h1 className="text-xl font-semibold">Task Details</h1>
                 <button
@@ -327,7 +328,7 @@ function TodoList() {
                   
                   value={taskDisc}  
                   onChange={(event) => setTaskDisc(event.target.value)}
-                  className=" outline-[#3662E3] h-[100px] md:h-[160px] resize-none rounded-lg py-2 px-4 border-2 border-gray-400"
+                  className=" outline-[#3662E3] h-[60px] md:h-[160px] resize-none rounded-lg py-2 px-4 border-2 border-gray-400"
                   placeholder="Enter a short description"
                 />
               </div>
@@ -336,7 +337,7 @@ function TodoList() {
 
               <div>
                 <h1 className="opacity-60 text-xs pt-5">icons</h1>
-                <div className="grid grid-cols-4 md:grid-cols-5 pt-1 gap-6">
+                <div className="grid grid-cols-4 md:grid-cols-5 pt-1 md:gap-6 gap-2">
                   {Images.map((items, index) => {
                     return (
                       (taskImg == index && (
@@ -441,9 +442,9 @@ function TodoList() {
                   )}
                 </div>
               </div>
-            
+              <div className="h-[15%]"></div>
             {/* buttons */}
-            <div className="absolute bottom-0 right-0 flex gap-3 pb-2 pr-2">
+            <div className="fixed bottom-10 right-10 flex gap-3 pb-2 pr-2">
             <div className="  bg-9 text-0 px-5 py-1 rounded-2xl   ">
                 <button
                   onClick={del}
